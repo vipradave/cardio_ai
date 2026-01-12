@@ -1,13 +1,36 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>frontend</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>frontend</title>
+
+        <!-- Tailwind Play CDN fallback (temporary, dev-only) -->
+        <!-- This fallback helps Tailwind utility classes render immediately during development
+         when PostCSS/Tailwind hasn't been compiled yet. Remove this before production. -->
+        <script>
+            (function () {
+                try {
+                    // Only load the CDN fallback on localhost to avoid shipping CDN in production.
+                    var host = (location && location.hostname) || "";
+                    if (host === "localhost" || host === "127.0.0.1") {
+                        var s = document.createElement("script");
+                        s.src = "https://cdn.tailwindcss.com";
+                        s.defer = true;
+                        document.head.appendChild(s);
+                    }
+                } catch (e) {
+                    // silent fallback
+                    console &&
+                        console.warn &&
+                        console.warn("Tailwind CDN fallback error", e);
+                }
+            })();
+        </script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="module" src="/src/main.jsx"></script>
+    </body>
 </html>

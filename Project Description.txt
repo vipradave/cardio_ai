@@ -1,0 +1,225 @@
+-------THE PROJECT---------
+To develop an AI-assisted system for automated analysis of X-ray coronary angiography images that accurately identifies coronary vessels and detects stenosis, while incorporating a doctor-in-the-loop mechanism to enable medical professionals to verify and finalize the diagnosis of Coronary Artery Disease (CAD).
+
+-------TITLE--------------
+AI-Driven System for Comprehensive Management of Coronary Artery Disease Using X-ray Coronary Angiography
+
+-------PROBLEM STATEMENT---------
+Coronary Artery Disease (CAD) is one of the leading causes of mortality worldwide, primarily resulting from the narrowing or blockage of coronary arteries due to atherosclerotic plaque formation, known as stenosis. X-ray Coronary Angiography (XCA) is the gold standard for diagnosing CAD; however, its interpretation requires significant expertise and is time-consuming, subjective, and prone to inter-observer variability. In many healthcare settings, especially in resource-limited regions, the availability of experienced cardiologists is limited, increasing the risk of delayed or inaccurate diagnosis.
+
+Existing automated approaches largely rely on object detection or classification techniques, which struggle with the low contrast, thin vessel structures, and subtle nature of stenosis in angiography images. These methods often fail to provide clinically interpretable results and lack reliability for real-world deployment.
+
+This project addresses these challenges by developing an AI-driven system that enables comprehensive management of CAD through automated vessel segmentation and geometry-based stenosis analysis. By extracting coronary vessel structures at the pixel level and analyzing vessel diameter variations, the system provides accurate, interpretable insights into stenosis severity. The proposed solution aims to support efficient diagnosis, improve consistency in clinical decision-making, and enhance the overall management of coronary artery disease.
+
+--------TECHNOLOGY USED-----------
+Artificial Intelligence (AI)
+
+Machine Learning (ML)
+
+Deep Learning (Convolutional Neural Networks)
+
+Medical Image Processing
+
+Computer Vision
+
+Python
+
+PyTorch
+
+NumPy, Pandas
+
+OpenCV, scikit-image
+
+Data Visualization
+
+
+--------EXPECTED OUTCOME----------
+The expected outcome of this project is a robust and interpretable AI-based system capable of analyzing X-ray coronary angiography images to assist in the comprehensive management of Coronary Artery Disease. The system will accurately segment coronary vessels, identify regions of significant narrowing, and highlight potential stenosis based on vessel geometry and diameter reduction. The output will include visual overlays and quantitative indicators that support reliable diagnosis and severity assessment. This solution is expected to improve diagnostic efficiency, reduce subjectivity in image interpretation, and serve as a scalable clinical decision-support tool that can be integrated into existing healthcare workflows.
+
+---------FRONTEND--------------
+SCREEN 1: Image Upload & Intake Screen
+🎯 Design Intent
+
+This is the entry point, so it must feel:
+
+Safe
+
+Clinical
+
+Extremely simple (no confusion for patients or staff)
+
+🧠 Why the design looks like this
+
+Large drag-and-drop area
+→ Doctors and technicians often upload files quickly; this reduces friction.
+
+Minimal UI, lots of white space
+→ Prevents anxiety; medical users trust calm interfaces.
+
+Single primary action (“Analyze Image”)
+→ Avoids decision fatigue.
+
+Visible disclaimer
+→ Legally and ethically required in medical AI.
+
+🧪 UX Principle Used
+
+Reduce cognitive load for first-time users.
+
+🫀 SCREEN 2: AI Analysis Result Screen
+🎯 Design Intent
+
+This screen must explain AI decisions visually, not just numerically.
+
+🧠 Why the split layout
+
+Left side = Image Viewer
+
+Doctors think visually.
+
+Bounding box shows where stenosis is detected.
+
+Dark background improves contrast for angiography images.
+
+Right side = AI Explanation Panel
+
+Shows:
+
+Stenosis %
+
+Severity label
+
+Confidence level
+
+Keeps numbers separate from the image to avoid clutter.
+
+🎨 Color Logic
+
+Red → Severe
+
+Amber → Moderate
+
+Green → Mild
+This matches existing cardiology conventions.
+
+🧪 UX Principle Used
+
+Explainable AI (XAI): show evidence, not just output.
+
+🫀 SCREEN 3: Doctor Review Dashboard
+🎯 Design Intent
+
+This is the most important screen ethically.
+
+🧠 Why this design is critical
+
+AI is not allowed to be the final authority
+
+Doctor must feel:
+
+In control
+
+Respected
+
+Not overridden by AI
+
+🔍 Key Design Choices
+
+Toggle AI overlay ON/OFF
+→ Lets doctors inspect raw image without bias.
+
+AI results shown separately
+→ Prevents anchoring bias.
+
+Clear decision options
+
+Accept
+
+Modify
+
+Reject
+
+✍️ Doctor Notes Area
+
+Encourages justification
+
+Builds trust
+
+Enables auditability
+
+🧪 UX Principle Used
+
+Human-in-the-loop decision making.
+
+🫀 SCREEN 4: Doctor Verification & Notes Screen
+🎯 Design Intent
+
+This screen transforms AI output into medical truth.
+
+🧠 Why this screen exists separately
+
+Legal compliance
+
+Clinical accountability
+
+Hospital documentation standards
+
+🧾 Design Characteristics
+
+Structured layout (not flexible cards)
+
+Clear sections:
+
+Case ID
+
+AI summary
+
+Doctor decision
+
+Clinical notes
+
+Signature placeholder
+→ Matches real hospital workflow.
+
+🧪 UX Principle Used
+
+Auditability and traceability.
+
+🫀 SCREEN 5: Final Medical Report Screen
+🎯 Design Intent
+
+This is the patient-facing + hospital-facing output.
+
+🧠 Why the design is printable
+
+Hospitals still rely heavily on PDFs
+
+Reports may be shared with:
+
+Patients
+
+Insurance
+
+Other doctors
+
+📄 Design Features
+
+Clean white background
+
+Minimal colors
+
+One annotated image
+
+Final severity clearly stated
+
+AI + Doctor both mentioned (but doctor dominates)
+
+🧪 UX Principle Used
+
+Trust through clarity and professionalism.
+
+🔁 COMPLETE WORKFLOW (ONE LINE)
+
+Upload → AI assists → Doctor verifies → Final report generated
+
+This is the gold standard workflow for medical AI.
